@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Xam.Plugins.Android.Interactivemedia.Ads</id>
+        <version>3.7.4</version>
+        <title>Interactive Media Ads for Xamarin.Android</title>
+        <authors>Martijn van Dijk</authors>
+        <owners>Martijn van Dijk</owners>
+        <licenseUrl>https://github.com/martijn00/InteractiveMediaAdsXamarin/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/martijn00/InteractiveMediaAdsXamarin</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/martijn00/InteractiveMediaAdsXamarin/master/icon_InteractiveMediaAds.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Xamarin bindings for Interactive Media Ads</description>
+        <summary>Xamarin bindings library for the Google Interactive Media Ads library</summary>
+        <tags>xamarin, Google, IMA, Interactive, Media, Ads, VAST, monodroid, C#, xamarin.android, android</tags>
+    </metadata>
+    <files>
+        <file src="..\InteractiveMediaAds\InteractiveMediaAds\bin\Release\InteractiveMediaAds.dll" target="lib\MonoAndroid\InteractiveMediaAds.dll" />
+        <file src="..\InteractiveMediaAds\InteractiveMediaAds\bin\Release\InteractiveMediaAds.pdb" target="lib\MonoAndroid\InteractiveMediaAds.pdb" />
+    </files>
+</package>
