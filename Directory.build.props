@@ -1,0 +1,50 @@
+<Project>
+  <PropertyGroup>
+    <Copyright>Copyright (c) Martijn van Dijk</Copyright>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/martijn00/InteractiveMediaAdsXamarin</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/martijn00/InteractiveMediaAdsXamarin/master/icon_InteractiveMediaAds.png</PackageIconUrl>
+    <Authors>Martijn van Dijk</Authors>
+	  <Owners>Martijn van Dijk</Owners>
+    <PackageTags>xamarin, Google, IMA, Interactive, Media, Ads, VAST, monodroid, C#, xamarin.android, android</PackageTags>
+    <PackageReleaseNotes>https://github.com/martijn00/InteractiveMediaAdsXamarin</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/martijn00/InteractiveMediaAdsXamarin</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>3.9.4</Version>
+
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000</NoWarn>
+    <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' and '$(IsTestProject)' != 'true'">true</GeneratePackageOnBuild>
+    
+    <Platform>AnyCPU</Platform>
+    <DebugType>full</DebugType>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+	
+    <IsTestProject>$(MSBuildProjectName.Contains('UnitTest'))</IsTestProject>
+    <IsLibraryProject>$(MSBuildProjectName.Contains('InteractiveMediaAds'))</IsLibraryProject>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsTestProject)' != 'true' and '$(SourceLinkEnabled)' != 'false' and '$(IsLibraryProject)' == 'true'">
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
+    <!--<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All"/>-->
+  </ItemGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <TargetsToBuild>All</TargetsToBuild>
+    <!--<TargetsToBuild>Android</TargetsToBuild>-->
+    <!--<TargetsToBuild>Uap</TargetsToBuild>-->
+    <!--<TargetsToBuild>iOS</TargetsToBuild>-->
+    <!--<TargetsToBuild>Apple</TargetsToBuild>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' != 'Debug' ">
+    <TargetsToBuild>All</TargetsToBuild>
+  </PropertyGroup>
+  
+</Project>

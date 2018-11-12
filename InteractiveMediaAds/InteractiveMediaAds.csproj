@@ -1,0 +1,19 @@
+<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <TargetFrameworks>MonoAndroid90</TargetFrameworks>
+    <AssemblyName>InteractiveMediaAds</AssemblyName>
+    <RootNamespace>InteractiveMediaAds</RootNamespace>
+    <Description>Xamarin bindings for Interactive Media Ads</Description>
+    <PackageId>Xam.Plugins.Android.Interactivemedia.Ads</PackageId>
+    <IsBindingProject>true</IsBindingProject>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="Additions\*;Jars\*;Transforms\*;JavaDocs\**" />
+	  <LibraryProjectZip Include="Jars\*.jar" />
+	  <TransformFile Include="Transforms\*.xml" />
+	  <Compile Include="Additions\*.cs" />
+    <None Include="..\readme.txt" pack="true" PackagePath="." />
+  </ItemGroup>
+</Project>

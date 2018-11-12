@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InteractiveMediaAds", "InteractiveMediaAds\InteractiveMediaAds.csproj", "{C9F2CC3F-E278-478A-8378-187014A77185}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{86D603F2-4504-40C6-9AFA-90A405AFDEDD}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.build.props = Directory.build.props
+		Directory.build.targets = Directory.build.targets
+		global.json = global.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F2CC3F-E278-478A-8378-187014A77185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F2CC3F-E278-478A-8378-187014A77185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F2CC3F-E278-478A-8378-187014A77185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F2CC3F-E278-478A-8378-187014A77185}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4C5B50B-9656-4CE3-B200-9D21609ADA81}
+	EndGlobalSection
+EndGlobal
