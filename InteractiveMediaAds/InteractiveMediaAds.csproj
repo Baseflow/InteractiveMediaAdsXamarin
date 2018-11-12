@@ -1,4 +1,4 @@
-<Project Sdk="MSBuild.Sdk.Extras">
+﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
     <TargetFrameworks>MonoAndroid90</TargetFrameworks>
     <AssemblyName>InteractiveMediaAds</AssemblyName>
@@ -11,9 +11,13 @@
   
   <ItemGroup>
     <None Include="Additions\*;Jars\*;Transforms\*;JavaDocs\**" />
-	  <LibraryProjectZip Include="Jars\*.jar" />
+    <EmbeddedJar Include="Jars\*.jar" />
 	  <TransformFile Include="Transforms\*.xml" />
 	  <Compile Include="Additions\*.cs" />
     <None Include="..\readme.txt" pack="true" PackagePath="." />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Mono.Android.Export" />
   </ItemGroup>
 </Project>
