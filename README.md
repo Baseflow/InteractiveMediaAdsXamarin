@@ -2,6 +2,12 @@
 
 The IMA Android SDK v3 enables developers to create Android apps that request and track VAST ads.
 
+# Support
+
+* Feel free to open an issue. Make sure to use one of the templates!
+* Commercial support is available. Integration with your app or services, samples, feature request, etc. Email: [hello@baseflow.com](mailto:hello@baseflow.com)
+* Powered by: [baseflow.com](https://baseflow.com)
+
 ## Status: 
 [![Build status](https://ci.appveyor.com/api/projects/status/kghccs7jyiqgqww7?svg=true)](https://ci.appveyor.com/project/martijn00/InteractiveMediaAdsXamarin)
 ![GitHub tag](https://img.shields.io/github/tag/martijn00/InteractiveMediaAdsXamarin.svg)
