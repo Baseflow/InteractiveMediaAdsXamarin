@@ -2,49 +2,65 @@
   <PropertyGroup>
     <Copyright>Copyright (c) Martijn van Dijk</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/martijn00/InteractiveMediaAdsXamarin</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/martijn00/InteractiveMediaAdsXamarin/master/icon_InteractiveMediaAds.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/Baseflow/InteractiveMediaAdsXamarin</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Baseflow/InteractiveMediaAdsXamarin/develop/icon.png</PackageIconUrl>
     <Authors>Martijn van Dijk</Authors>
 	  <Owners>Martijn van Dijk</Owners>
     <PackageTags>xamarin, Google, IMA, Interactive, Media, Ads, VAST, monodroid, C#, xamarin.android, android</PackageTags>
-    <PackageReleaseNotes>https://github.com/martijn00/InteractiveMediaAdsXamarin</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/Baseflow/InteractiveMediaAdsXamarin</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <RepositoryUrl>https://github.com/martijn00/InteractiveMediaAdsXamarin</RepositoryUrl>
+	  
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/Baseflow/InteractiveMediaAdsXamarin</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>3.10.9</Version>
-
-    <LangVersion>latest</LangVersion>
-    <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000</NoWarn>
-    <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
-    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' and '$(IsTestProject)' != 'true'">true</GeneratePackageOnBuild>
-    
+    <Version>3.11.3</Version>
     <Platform>AnyCPU</Platform>
-    <DebugType>full</DebugType>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-	
-    <IsTestProject>$(MSBuildProjectName.Contains('UnitTest'))</IsTestProject>
-    <IsLibraryProject>$(MSBuildProjectName.Contains('InteractiveMediaAds'))</IsLibraryProject>
+
+    <!--<Nullable>enable</Nullable>-->
+    <LangVersion>8.0</LangVersion>
+    <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000;CS0109;CS0108;CS0618;CS0114;NU1603</NoWarn>
+
+    <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
+    <_EnableInterfaceMembers>true</_EnableInterfaceMembers>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <AndroidLinkTool>r8</AndroidLinkTool>
+
+    <DisableExtraReferences>true</DisableExtraReferences>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(IsTestProject)' != 'true' and '$(SourceLinkEnabled)' != 'false' and '$(IsLibraryProject)' == 'true'">
-    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
-    <!--<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All"/>-->
-  </ItemGroup>
-  
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DesignTimeBuild>false</DesignTimeBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild Condition=" '$(IsTestProject)' != 'true'">true</GeneratePackageOnBuild>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <TargetsToBuild>All</TargetsToBuild>
-    <!--<TargetsToBuild>Android</TargetsToBuild>-->
-    <!--<TargetsToBuild>Uap</TargetsToBuild>-->
-    <!--<TargetsToBuild>iOS</TargetsToBuild>-->
-    <!--<TargetsToBuild>Apple</TargetsToBuild>-->
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' != 'Debug' ">
-    <TargetsToBuild>All</TargetsToBuild>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' And '$(OS)' == 'Windows_NT' ">
+    <!--<IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(SourceLinkEnabled)' != 'false' ">
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
   
 </Project>

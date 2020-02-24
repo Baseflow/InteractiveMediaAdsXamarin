@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFrameworks>MonoAndroid90</TargetFrameworks>
+    <TargetFrameworks>monoandroid10.0</TargetFrameworks>
     <AssemblyName>InteractiveMediaAds</AssemblyName>
     <RootNamespace>InteractiveMediaAds</RootNamespace>
     <Description>Xamarin bindings for Interactive Media Ads</Description>
